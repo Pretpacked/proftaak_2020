@@ -79,7 +79,7 @@
                 </div>
             @endif
 
-            <a href="covid">
+            <a href="/">
             <div class="content">
                 <div class="title m-b-md">
                     LNNR
