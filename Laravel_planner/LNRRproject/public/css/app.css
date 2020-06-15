@@ -75,6 +75,19 @@ body {
   background-color: #f8fafc;
 }
 
+.menu_field
+{
+    background-color: red;
+    width: 15%;
+    margin-left: -2%;
+    margin-top: -3%;
+}
+
+.list
+{
+    padding-top: 80%;
+}
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -10926,5 +10939,7 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+
+
 }
 
