@@ -75,6 +75,17 @@ body {
   background-color: #f8fafc;
 }
 
+
+/*!
+ * vanaf
+ * hier
+ * eigen
+ * css
+ */
+.sidebar
+{
+    margin-left: -2%;
+}
 .menu_field
 {
     background-color: red;
