@@ -16,7 +16,19 @@ Route::get('/', function () {
 });
 
 Route::get('covid', function () {
-    return view('layouts/covid');
+    return view('pages/covid');
+});
+
+Route::get('rooster', function () {
+    return view('pages/rooster');
+});
+
+Route::get('studie', function () {
+    return view('pages/studie');
+});
+
+Route::get('plannen', function () {
+    return view('pages/plannen');
 });
 
 Auth::routes();
