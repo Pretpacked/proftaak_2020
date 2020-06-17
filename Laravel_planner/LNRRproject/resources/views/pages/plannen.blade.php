@@ -21,7 +21,7 @@
 
                     <div class="w3-light-grey w3-bar-block float-right" style="width:25%">
                         <h3 class="w3-bar-item">Vakken</h3>
-                        <a href="# class="w3-bar-item w3-button">Nederlands</a>
+                        <a href="#" class="w3-bar-item w3-button">Nederlands</a>
                         <a href="#" class="w3-bar-item w3-button">Engels</a>
                         <a href="#" class="w3-bar-item w3-button">Spaans</a>
                         <a href="#" class="w3-bar-item w3-button">Afghaans</a>
