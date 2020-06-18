@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Register') }} </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -38,6 +38,22 @@
                                 @enderror
                             </div>
                         </div>
+
+                        {{-- studie form --}}
+                        <div class="form-group{{ $errors->has('studie') ? ' has-error' : '' }}">
+                            <label for="studie" class="col-md-4 control-label">Studie</label>
+
+                            <div class="col-md-6">
+                            <input id="studie" type="text" class="form-control" name="studie" value="{{ old('studie') }}" required autofocus>
+
+                                @if ($errors->has('studie'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('studie') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
