@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -17,7 +19,6 @@
                         <a href="rooster" class="w3-bar-item w3-button">Rooster</a>
                         <a href="covid" class="w3-bar-item w3-button">Covid 19</a>
                     </div>
-
 
 
                 </div>
