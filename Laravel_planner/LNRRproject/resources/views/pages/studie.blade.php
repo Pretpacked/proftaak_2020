@@ -20,6 +20,8 @@
                         <a href="covid" class="w3-bar-item w3-button">Covid 19</a>
                     </div>
 
+                    <p class="text-center"> </p>
+
 
                 </div>
             </div>
