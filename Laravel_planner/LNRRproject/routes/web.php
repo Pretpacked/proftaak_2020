@@ -35,5 +35,5 @@ Route::get('plannen', function () {
 
 Auth::routes();
 
-Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/home', 'HomeController@index')->name('profile.show');
 
