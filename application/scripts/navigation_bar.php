@@ -9,11 +9,11 @@
                 <a class="nav-link" href="shop.php">Plannen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about.php">About</a>
+                <a class="nav-link" href="about.php">Mijn studie</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
-            </li>
+            </li> -->
             <?php
                 if(isset($_SESSION["orderList"])){
                     echo ' <li class="nav-item"><a class="nav-link" href="bestel.php">Bestel lijst</a></li>';

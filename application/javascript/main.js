@@ -114,3 +114,4 @@ function bestelRemoveAdd(id){
   
   window.open("bestel.php?id="+id_str, "_self"); 
 }
+

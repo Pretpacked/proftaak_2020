@@ -53,7 +53,7 @@ function getItems($productSearch, $productMinPrice, $productMaxPrice){
     }
 
     //Show database request
-    echo  "SELECT * FROM items ".$databaseParamaters;
+    echo  "SELECT * FROM tijden ".$databaseParamaters;
 
     //$userInformation = $conn->query("SELECT * FROM items ");
     //$userInformation = $userInformation->fetch_assoc();

@@ -1,5 +1,5 @@
 <?php 
-include_once("scripts/logon_register.php");
+include_once("scripts/login_register.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@ include_once("scripts/logon_register.php");
 </div>
 
     <!-- error handeling -->
-    <?php include_once("scripts/logon_register.php"); ?>
+    <?php include_once("scripts/login_register.php"); ?>
     <!-- navBar -->
     <?php include_once("scripts/navigation_bar.php"); ?>    
 

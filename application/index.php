@@ -1,5 +1,5 @@
     <?php 
-include_once("scripts/logon_register.php");
+include_once("scripts/login_register.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,15 +34,50 @@ include_once("scripts/logon_register.php");
     </form>
 </div>
     <!-- error handeling -->
-<?php include_once("scripts/logon_register.php"); ?>
+<?php include_once("scripts/login_register.php"); ?>
     <!-- navBar -->
-<?php include_once("scripts/navigation_bar.php"); ?>
+<?php// include_once("scripts/navigation_bar.php"); ?>
 
-<div class="text-center text"> 
-        Welkom op onze webshop  
-      </div> 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.php">LRRN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
-      <img src="images/rlr.jpeg" class="img-fluid centerLogo" alt="Responsive image">
+            <?php
+                if(isset($_SESSION["orderList"])){
+                    echo ' <li class="nav-item"><a class="nav-link" href="bestel.php">Bestel lijst</a></li>';
+                }
+            ?>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+            <?php 
+                if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){ echo '<button class="btn btn-outline-success my-2 my-sm-0 login" onclick="login()">Login</button>'; }
+                if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){ echo '<button class="btn btn-outline-success my-2 my-sm-0" onclick="register()">Register</button>';}
+
+                /*if(isset($_SESSION["password"]) && isset($_SESSION["username"])){ echo '<a class="btn btn-outline-success my-2 my-sm-0" href="settings.php">settings</a>'; }*/
+                if(isset($_SESSION["password"]) && isset($_SESSION["username"])){ echo '<a class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=true">logout</a>'; }
+            ?>
+        </div>
+    </div>
+</nav>
+
+        <?php 
+         if(isset($_SESSION["password"]) && isset($_SESSION["username"]))
+         {
+             header('location: shop.php');
+         }
+
+        ?>
+
+    </div>
+</div>
+
+<div class="text">
+    <p class="font-weight-light">Login of registreer om verder te gaan!</p>
+</div>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

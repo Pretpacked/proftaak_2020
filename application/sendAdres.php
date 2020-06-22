@@ -1,5 +1,5 @@
 <?php 
-include_once("scripts/logon_register.php");
+include_once("scripts/login_register.php");
 if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
     echo "Er is iets verkeerd gegaan tijdens het bestel, probeer het opnieuw.";
     echo "<a href='shop.php'>terug!</a>";
@@ -42,7 +42,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
 
     <?php 
     //error handeling
-    include_once("scripts/logon_register.php"); 
+    include_once("scripts/login_register.php"); 
     //navBar
     include_once("scripts/navigation_bar.php"); 
 

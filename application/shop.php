@@ -1,5 +1,5 @@
 <?php 
-include_once("scripts/logon_register.php");
+include_once("scripts/login_register.php");
 
 if(isset($_GET["clear"])){
     unset($_SESSION["orderList"]);
@@ -40,7 +40,7 @@ if(isset($_GET["clear"])){
 
     <?php 
     //error handeling
-    include_once("scripts/logon_register.php"); 
+    include_once("scripts/login_register.php"); 
     //navBar
     include_once("scripts/navigation_bar.php"); 
 
@@ -57,7 +57,7 @@ if(isset($_GET["clear"])){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM items";
+    $sql = "SELECT * FROM tijden";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
