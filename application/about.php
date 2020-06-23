@@ -39,8 +39,8 @@ include_once("scripts/login_register.php");
     <!-- navBar -->
     <?php include_once("scripts/navigation_bar.php"); ?>    
 
-    <div class="text-center text"> 
-        About  
+    <div class="text-center aboutText"> 
+        Mijn studie  
     </div> 
 
     <p class="text-center aboutText">

@@ -72,30 +72,25 @@ if(isset($_GET["clear"])){
 
 <div class="filtermenu">
     <ul id="myMenu"> 
-        <p class="text-center categorieKleding">Categorie</p>
-        <a><p id="heren" onclick="filterUpdate(this.id, false)" class="text-center product">heren</p></a>
+        <p class="text-center categorieKleding">Vakken</p>
+        <!-- <a><p id="heren" onclick="filterUpdate(this.id, false)" class="text-center product">heren</p></a>
         <a><p id="heren.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Heren x</p></a>
         <a><p id="dames" onclick="filterUpdate(this.id, false)" class="text-center product">dames</p></a>
         <a><p id="dames.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">dames x</p></a>
-        <hr>
+        <hr> -->
 
-        <input class="form-control mr-sm-2 search" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Kleding" aria-label="Search">
+        <input class="form-control mr-sm-2 search" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Vakken" aria-label="Search">
 
-        <li><a><p id="shirts" onclick="filterUpdate(this.id, false)" class="text-center product">Shirts</p></a></li>
-        <li><a><p id="shirts.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Shirts x</p></a></li>
-        <li><a><p id="polo's" onclick="filterUpdate(this.id, false)" class="text-center product">polo's</p></a></li>
-        <li><a><p id="polo's.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">polo's x</p></a></li>
-        <li><a><p id="truien" onclick="filterUpdate(this.id, false)" class="text-center product">Truien</p></a></li>
-        <li><a><p id="truien.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Truien x</p></a></li>
-        <li><a><p id="vesten" onclick="filterUpdate(this.id, false)" class="text-center product">Vesten</p></a></li>
-        <li><a><p id="vesten.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Vesten x</p></a></li>
-        <li><a><p id="schoenen" onclick="filterUpdate(this.id, false)" class="text-center product">Schoenen</p></a></li>
-        <li><a><p id="schoenen.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Schoenen x</p></a></li>
-        <li><a><p id="broeken" onclick="filterUpdate(this.id, false)" class="text-center product">Broeken</p></a></li>
-        <li><a><p id="broeken.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Broeken x</p></a></li>
+        <li><a><p id="shirts" onclick="filterUpdate(this.id, false)" class="text-center product">Nederlands</p></a></li>
+        <li><a><p id="shirts.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Nederlands x</p></a></li>
+        <li><a><p id="polo's" onclick="filterUpdate(this.id, false)" class="text-center product">Engels</p></a></li>
+        <li><a><p id="polo's.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Engels x</p></a></li>
+        <li><a><p id="truien" onclick="filterUpdate(this.id, false)" class="text-center product">Rekenen</p></a></li>
+        <li><a><p id="truien.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Rekenen x</p></a></li>
+      
     </ul> 
     <ul id="myMenu2"> 
-        <hr>
+        <!-- <hr>
         <input class="form-control mr-sm-2 search" type="text" id="mySearch2" onkeyup="myFunction2()" placeholder="Merken" aria-label="Search">
 
         <li><a><p id="fredPerry" onclick="filterUpdate(this.id, false)" class="text-center product">Fred perry</p></a></li>
@@ -107,7 +102,7 @@ if(isset($_GET["clear"])){
         <li><a><p id="lacoste" onclick="filterUpdate(this.id, false)" class="text-center product">Lacoste</p></a></li>
         <li><a><p id="lacoste.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Lacoste x</p></a></li>
         <li><a><p id="adidas" onclick="filterUpdate(this.id, false)" class="text-center product">Adidas</p></a></li>
-        <li><a><p id="adidas.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Adidas x</p></a></li>
+        <li><a><p id="adidas.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Adidas x</p></a></li> -->
     </ul> 
 </div>
 
