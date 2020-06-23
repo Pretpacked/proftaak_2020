@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Gegenereerd op: 22 jun 2020 om 11:47
--- Serverversie: 5.7.19
--- PHP-versie: 7.1.20
+-- Host: 127.0.0.1
+-- Gegenereerd op: 23 jun 2020 om 12:21
+-- Serverversie: 10.4.6-MariaDB
+-- PHP-versie: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,34 +42,6 @@ CREATE TABLE `rooster` (
 --
 
 INSERT INTO `rooster` (`id`, `voornaam`, `achternaam`, `email`, `items`, `tijd`) VALUES
-(00000023, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000024, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000025, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000026, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000027, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000028, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000029, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000030, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000031, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000032, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000033, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000001;00000001', ''),
-(00000034, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000035, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000036, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000037, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000038, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000039, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000040, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000041, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000042, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000043, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000044, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000045, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000046, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000047, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000048, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000049, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000050, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
 (00000051, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
 (00000052, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
 (00000053, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
@@ -86,6 +58,7 @@ INSERT INTO `rooster` (`id`, `voornaam`, `achternaam`, `email`, `items`, `tijd`)
 
 CREATE TABLE `tijden` (
   `id` int(8) UNSIGNED ZEROFILL NOT NULL,
+  `vakken` varchar(255) NOT NULL,
   `tijdstip` varchar(100) NOT NULL,
   `Beschrijving` text NOT NULL,
   `productImg` varchar(255) NOT NULL
@@ -95,20 +68,8 @@ CREATE TABLE `tijden` (
 -- Gegevens worden geëxporteerd voor tabel `tijden`
 --
 
-INSERT INTO `tijden` (`id`, `tijdstip`, `Beschrijving`, `productImg`) VALUES
-(00000001, 'groen shirt', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/fredShirtGroen.jpg'),
-(00000002, 'witte trui', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/truiLyleWit.jpg'),
-(00000003, 'neonoranje vest', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/stoneIslandVestNeonoranje.jpg'),
-(00000004, 'zwarte schoenen', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/lacosteZwarteSchoenen.jpg'),
-(00000005, 'zwarte broek', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/zwarteBroekAdidas.jpg'),
-(00000006, 'witte polo', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/DamesPoloFredWit.jpg'),
-(00000007, 'regenboog trui', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/lacosteTruiDames.jpg'),
-(00000008, 'roze schoenen', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/gazelleDamesRoze.png'),
-(00000009, 'regenboog shirt', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/AdidasRainbowShirt.png'),
-(00000010, 'navy lange polo', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/navyLongPoloLyle.jpg'),
-(00000011, 'rode sport broek', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/RodeDamesBroekLacoste.jpg'),
-(00000012, 'grijs shirt ', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/grayShirtStone.jpg'),
-(00000013, 'navy vest', 'Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot \"Hier uw tekst, hier uw tekst\" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar \"lorem ipsum\" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).', 'images/navyVestFred.jpg');
+INSERT INTO `tijden` (`id`, `vakken`, `tijdstip`, `Beschrijving`, `productImg`) VALUES
+(00000014, 'Nederlands', '1 juli 2020 - 12:30 ', 'Toets Nederlands ', '');
 
 -- --------------------------------------------------------
 
@@ -136,7 +97,8 @@ INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username
 (00000005, 'root', 'root', 'root@root.nl', 'root', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09'),
 (00000006, 'Rianne', 'Ter Linde', 'rianne@terlinde.eu', 'Rianne', 'L3E0a2J4bHR6SVZyR1VrSHdhQkczQT09'),
 (00000007, 'ricardo', 'ter', 'ricardo@terlinde.eu', 'ricardo', 'R0FzOUllbkdJN05NZVM2VlBlR2xOUT09'),
-(00000008, 'noah', 'alba', 'noah.alba@hotmail.com', 'noah', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09');
+(00000008, 'noah', 'alba', 'noah.alba@hotmail.com', 'noah', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09'),
+(00000009, 'admin', 'admin', 'admin@admin.nl', 'admin', 'OVUwd001SGRwZVZTOTVURjAweW0rdz09');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -175,13 +137,13 @@ ALTER TABLE `rooster`
 -- AUTO_INCREMENT voor een tabel `tijden`
 --
 ALTER TABLE `tijden`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT voor een tabel `userinformation`
 --
 ALTER TABLE `userinformation`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
