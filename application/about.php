@@ -43,11 +43,7 @@ include_once("scripts/login_register.php");
         About  
     </div> 
 
-    <p class="text-center aboutText">Welkom op onze webshop, we zijn Ricardo Bettonvil, Lars van breugel en Ricardo ter Linde.<br>
-    We zijn in mei 2019 begonnen met deze webshop, het idee kwam voort uit een shoolopdracht.<br>
-    De webshop is nu zo uitgebreid dat we voortaan kunnen pronken met de mooiste merken.<br>
-    Wat begon met onze eigen kledinglijn is uitgegroeid tot aan de grootste en mooiste merken,<br>
-    Neem bijvoorbeeld: Adidas, Stone island, Lyle en Scott en zo maar door.
+    <p class="text-center aboutText">
     </p>
 
     <!-- JavaScript -->
