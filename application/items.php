@@ -81,8 +81,8 @@ if(isset($_GET["order"]) and isset($_GET["order"])){
         echo            "<div id='item-description'>" . $result["Beschrijving"] ."</div>";
         echo        "</div>";
         echo        "<div class='col-lg-12 col-sm-12'>";
-        echo            "<div id='item-price'>€". $result["tijdstip"] .",00</div>";
-        echo            "<a href='items.php?id=".$_GET['id']."&order=true' class='items-button btn btn-primary float-right'>Bestel</a></div>";
+        echo            "<div id='item-price'>". $result["tijdstip"] ."</div>";
+        echo            "<a href='items.php?id=".$_GET['id']."&order=true' class='items-button btn btn-primary float-right'>Opslaan</a></div>";
         echo        "</div>";
         echo    "</div>";
         echo"</div>";

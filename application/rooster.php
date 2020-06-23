@@ -69,7 +69,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         $array_count = array_count_values($_SESSION["orderList"]);
         if($_SESSION["orderList"] == null){
             unset($_SESSION["orderList"]);
-            header("Location:shop.php");
+            header("Location:plannen.php");
         }
     }
 
@@ -100,8 +100,6 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         echo '<th></th>'; 
         echo '<th>Vak</th>'; 
         echo '<th>tijdstip</th>'; 
-       // echo '<th>Type</th>';
-       // echo '<th>Prijs</th>';
         echo '<th>Remove</th>';
         echo '</tr>'; 
         echo '</thead>'; 
@@ -112,52 +110,10 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
             echo '<td class="bestel-container"><img class="bestel-img"src='.$orderItems[$i]["productImg"].'></td>';
             echo '<td>'.$orderItems[$i]["tijdstip"].'</td>';
             echo '<td>'.$orderItems[$i]["tijdstip"].'</td>';
-           // echo '<td>'.$orderItems[$i]["tijdstip"].'/'.$orderItems[$i]["kleding"].'</td>';
-           // echo '<td>€'.$orderItems[$i]["tijdstip"].',00 x'.$array_count[$orderItems[$i]["id"]];
             echo '<td onclick="bestelRemoveAdd('.$orderItems[$i]["id"].')">x</td>';
             echo '</tr>';
-           // $t = $t + ($orderItems[$i]["prijs"] * $array_count[$orderItems[$i]["id"]]);
         }
         
-        // $btw = $t/100*21;
-        // $total = $btw+$t;
-        // echo '<tr>';
-        // echo '<tr class="orderMenuPrice">';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th>Price</th>';
-        // echo '  <th>€'.$t.'</th>';
-        // echo '  <th></th>';
-        // echo '</tr>';
-        // echo '<tr>';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th>Btw (21%)</th>';
-        // echo '  <th>€'.$btw.'</th>';
-        // echo '  <th></th>';
-        // echo '</tr>';
-        // echo '<tr>';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th></th>';
-        // echo '  <th>Total price</th>';
-        // echo '  <th>€'.$total.'</th>';
-        // echo '  <th></th>';
-        // echo '</tr>';
-        // echo '<tbody>'; 
-        // echo '</tbody>'; 
-        // echo '</table>';
-        // echo '<div class="row">';
-        // echo '<div class="col-sm-12"><a href="order.php" id="singlebutton" class="btn btn-primary float-right">Bestel</a><br><br><a href="shop.php?clear=true" id="singlebutton" class="btn btn-primary float-right">Bestel lijst leegmaken</a></div>';
-        // echo '</div>'; 
-        // echo '</div>'; 
-
-        // $_SESSION["total"] = $total;
-
-        
-
     }else{
 
     }

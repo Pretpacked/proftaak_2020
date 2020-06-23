@@ -1,10 +1,8 @@
 <?php 
 include_once("scripts/login_register.php");
-if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
-    echo "Er is iets verkeerd gegaan tijdens het bestel, probeer het opnieuw.";
-    echo "<a href='shop.php'>terug!</a>";
-    session_unset($_SESSION["orderList"]);
-    exit();
+
+if(isset($_GET["clear"])){
+    unset($_SESSION["orderList"]);
 }
 ?>
 <!DOCTYPE html>
@@ -48,8 +46,51 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
 
     //Start connection item database and retrive items
 
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $database = "proftaak";
+
+    $conn = new mysqli($servername, $username, $password, $database);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM tijden";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $items[] = $row;
+        }
+        ?><script> var items = <?php echo json_encode($items );?>; </script><?php
+    }
+    
+    $conn->close();
     ?>
 
+<div class="filtermenu">
+    <ul id="myMenu"> 
+        <p class="text-center categorieKleding">Vakken</p>
+
+
+        <input class="form-control mr-sm-2 search" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Vakken" aria-label="Search">
+
+        <li><a><p id="Nederlands" onclick="filterUpdate(this.id, false)" class="text-center product">Nederlands</p></a></li>
+        <li><a><p id="Nederlands.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Nederlands x</p></a></li>
+        <li><a><p id="Engels" onclick="filterUpdate(this.id, false)" class="text-center product">Engels</p></a></li>
+        <li><a><p id="Engels.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Engels x</p></a></li>
+        <li><a><p id="Rekenen" onclick="filterUpdate(this.id, false)" class="text-center product">Rekenen</p></a></li>
+        <li><a><p id="Rekenen.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Rekenen x</p></a></li>
+      
+    </ul> 
+
+</div>
+
+    <div id="productsList-container">
+        <div class="row" id="productsList"></div>
+    </div>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

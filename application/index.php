@@ -48,7 +48,7 @@ include_once("scripts/login_register.php");
 
             <?php
                 if(isset($_SESSION["orderList"])){
-                    echo ' <li class="nav-item"><a class="nav-link" href="bestel.php">Bestel lijst</a></li>';
+                    echo ' <li class="nav-item"><a class="nav-link" href="plannen.php">Bestel lijst</a></li>';
                 }
             ?>
             </ul>
@@ -67,7 +67,7 @@ include_once("scripts/login_register.php");
         <?php 
          if(isset($_SESSION["password"]) && isset($_SESSION["username"]))
          {
-             header('location: shop.php');
+             header('location: plannen.php');
          }
 
         ?>

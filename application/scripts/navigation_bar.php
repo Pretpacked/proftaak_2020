@@ -6,17 +6,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="shop.php">Plannen</a>
+                <a class="nav-link" href="plannen.php">Plannen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about.php">Mijn studie</a>
+                <a class="nav-link" href="studie.php">Mijn studie</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li> -->
             <?php
                 if(isset($_SESSION["orderList"])){
-                    echo ' <li class="nav-item"><a class="nav-link" href="bestel.php">Bestel lijst</a></li>';
+                    echo ' <li class="nav-item"><a class="nav-link" href="rooster.php">Rooster</a></li>';
                 }
             ?>
             </ul>
