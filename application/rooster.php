@@ -108,7 +108,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         for($i = 0; $i <= count($orderItems) - 1;$i++){
             echo '<tr>';
             echo '<td class="bestel-container"><img class="bestel-img"src='.$orderItems[$i]["productImg"].'></td>';
-            echo '<td>'.$orderItems[$i]["tijdstip"].'</td>';
+            echo '<td>'.$orderItems[$i]["vakken"].'</td>';
             echo '<td>'.$orderItems[$i]["tijdstip"].'</td>';
             echo '<td onclick="bestelRemoveAdd('.$orderItems[$i]["id"].')">x</td>';
             echo '</tr>';
