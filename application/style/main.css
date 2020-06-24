@@ -171,7 +171,7 @@ a:link, a:visited, a:hover, a:active {
     color: #000;
     margin-top: 5%;
 }
-.categorieKleding
+.vakken
 {
     color: black;
     font-weight: bold;
@@ -199,17 +199,19 @@ hr{
     opacity: 1;
     cursor: pointer;
 }
-.merken-productnaam{
+<<<<<<< HEAD
+.lessen-productnaam{
+=======
+.vakken-productnaam{
+>>>>>>> master
     display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: black;
-    color: white;
-    padding: 2%;
-    left: 0;
+
 }
-.items:hover > .merken-productnaam, .merken-productnaam:hover{
+<<<<<<< HEAD
+.items:hover > .lessen-productnaam, .lessen-productnaam:hover{
+=======
+.items:hover > .vakken-productnaam, .vakken-productnaam:hover{
+>>>>>>> master
     display: block;
 }
 #filters-container{

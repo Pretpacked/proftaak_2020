@@ -72,7 +72,7 @@ if(isset($_GET["clear"])){
 
 <div class="filtermenu">
     <ul id="myMenu"> 
-        <p class="text-center categorieKleding">Vakken</p>
+        <p class="text-center vakken">Vakken</p>
 
 
         <input class="form-control mr-sm-2 search" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Vakken" aria-label="Search">
