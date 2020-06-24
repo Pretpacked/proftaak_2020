@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 jun 2020 om 12:21
+-- Gegenereerd op: 24 jun 2020 om 12:23
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.8
 
@@ -69,7 +69,15 @@ CREATE TABLE `tijden` (
 --
 
 INSERT INTO `tijden` (`id`, `vakken`, `tijdstip`, `Beschrijving`, `productImg`) VALUES
-(00000014, 'Nederlands', '1 juli 2020 - 12:30 ', 'Toets Nederlands ', '');
+(00000014, 'Nederlands', '6 juli 2020 - 12:30 tot 13:50', 'Toets Nederlands ', 'images/6juli_nl.JPG'),
+(00000015, 'Nederlands', '8 juli 2020 - 14:00 tot 15:30', 'Nederlands toets', 'images/8juli_nl.JPG'),
+(00000016, 'Nederlands', '10 juli 2020 - 14:30 tot 16:00', 'Nederlands toets', 'images/10juli_nl.JPG'),
+(00000017, 'Engels', '7 juli 2020 - 13:00 tot 14:45', 'Engels toets', 'images/7juli_eng.JPG'),
+(00000018, 'Engels', '8 juli 2020 - 11:00 tot 12:45', 'Engels toets', 'images/8juli_eng.JPG'),
+(00000019, 'Engels', '9 juli 2020 - 12:00 tot 13:45', 'Engels toets', 'images/9juli_eng.JPG'),
+(00000020, 'Rekenen', '6 juli 2020 - 14:30 tot 16:00', 'Rekenen toets', 'images/rekenen_6jul.JPG'),
+(00000021, 'Rekenen', '7 juli 2020 - 15:30 tot 17:00', 'Rekenen toets', 'images/rekenen_7jul.JPG'),
+(00000022, 'Rekenen', '7 juli 2020 - 15:30 tot 17:00', 'Rekenen toets', 'images/rekenen_7jul.JPG');
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,7 @@ ALTER TABLE `rooster`
 -- AUTO_INCREMENT voor een tabel `tijden`
 --
 ALTER TABLE `tijden`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT voor een tabel `userinformation`
