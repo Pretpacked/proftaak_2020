@@ -76,10 +76,10 @@ function showPlanning(){
         for(var t = 0; t <= filters.length -1; t++){
           if(filters[t] == items[x]["vakken"] && filterIds.indexOf(items[x]["id"]) == -1){
             filterIds.push(items[x]["id"]);
-            planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";          }
+            planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'></a>";          }
         }
       }else{
-        planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";
+        planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'></a>";
       }
   }
   filterIds = [];
@@ -92,6 +92,6 @@ function planRemoveAdd(id){
     id_str = "0" + id_str;
     }
   
-  window.open("plannen.php?id="+id_str, "_self"); 
+  window.open("rooster.php?id="+id_str, "_self"); 
 }
 
