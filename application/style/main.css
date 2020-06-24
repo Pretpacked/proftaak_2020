@@ -199,19 +199,17 @@ hr{
     opacity: 1;
     cursor: pointer;
 }
-<<<<<<< HEAD
 .lessen-productnaam{
-=======
-.vakken-productnaam{
->>>>>>> master
     display: none;
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 2%;
+    left: 0;
 }
-<<<<<<< HEAD
 .items:hover > .lessen-productnaam, .lessen-productnaam:hover{
-=======
-.items:hover > .vakken-productnaam, .vakken-productnaam:hover{
->>>>>>> master
     display: block;
 }
 #filters-container{
