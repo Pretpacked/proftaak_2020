@@ -171,7 +171,7 @@ a:link, a:visited, a:hover, a:active {
     color: #000;
     margin-top: 5%;
 }
-.categorieKleding
+.vakken
 {
     color: black;
     font-weight: bold;
@@ -199,7 +199,7 @@ hr{
     opacity: 1;
     cursor: pointer;
 }
-.merken-productnaam{
+.lessen-productnaam{
     display: none;
     position: absolute;
     bottom: 0;
@@ -209,7 +209,7 @@ hr{
     padding: 2%;
     left: 0;
 }
-.items:hover > .merken-productnaam, .merken-productnaam:hover{
+.items:hover > .lessen-productnaam, .lessen-productnaam:hover{
     display: block;
 }
 #filters-container{
