@@ -74,15 +74,15 @@ function showProducts(){
   for(var x = 0; x <= items.length -1;x++) {
       if(filters.length != 0){
         for(var t = 0; t <= filters.length -1; t++){
-          if(filters[t] == items[x]["sex"] && filterIds.indexOf(items[x]["id"]) == -1){
-            filterIds.push(items[x]["id"]);
-            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
-          if(filters[t] == items[x]["kleding"] && filterIds.indexOf(items[x]["id"]) == -1){
-            filterIds.push(items[x]["id"]);
-            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
+          // if(filters[t] == items[x]["sex"] && filterIds.indexOf(items[x]["id"]) == -1){
+          //   filterIds.push(items[x]["id"]);
+          //   productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]; "</div></a>";          }
+          // if(filters[t] == items[x]["kleding"] && filterIds.indexOf(items[x]["id"]) == -1){
+          //   filterIds.push(items[x]["id"]);
+          //   productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
           if(filters[t] == items[x]["vakken"] && filterIds.indexOf(items[x]["id"]) == -1){
             filterIds.push(items[x]["id"]);
-            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
+            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"];"</div></a>";          }
         }
       }else{
         productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";
