@@ -1,12 +1,12 @@
 <?php 
 include_once("scripts/login_register.php");
-if(!isset($_SESSION["planList"]) and isset($_GET["order"])){
+if(!isset($_SESSION["planList"]) and isset($_GET["opslaan"])){
     $_SESSION["planList"] = [];
-    echo '<script> alert("["+merken+ " - " + productnaam + "] is toegevoegd aan de bestel lijst!")</script>';
+
 }
-if(isset($_GET["order"]) and isset($_GET["order"])){
+if(isset($_GET["opslaan"]) and isset($_GET["opslaan"])){
     array_push($_SESSION["planList"], $_GET["id"]);
-    echo '<script> alert("["+merken+ " - " + productnaam + "] is toegevoegd aan de bestel lijst!")</script>';
+
 }
 ?>
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ if(isset($_GET["order"]) and isset($_GET["order"])){
             echo"planItem could not be found!";
         }
 
-        echo"<div id='item-image-background' style='background-image: url(".$result["productImg"].")'></div>";
+    //    echo"<div id='item-image-background' style='background-image: url(".$result["productImg"].")'></div>";
 
         echo"<div class='container item-container'>";
         echo    "<div class='row'>";
@@ -81,8 +81,7 @@ if(isset($_GET["order"]) and isset($_GET["order"])){
         echo            "<div id='item-description'>" . $result["Beschrijving"] ."</div>";
         echo        "</div>";
         echo        "<div class='col-lg-12 col-sm-12'>";
-       // echo            "<div id='item-price'>". $result["tijdstip"] ."</div>";
-        echo            "<a href='items.php?id=".$_GET['id']."&order=true' class='items-button btn btn-primary float-right'>Opslaan</a></div>";
+        echo            "<a href='items.php?id=".$_GET['id']."&opslaan=true' class='items-button btn btn-primary float-right'>Opslaan</a></div>";
         echo        "</div>";
         echo    "</div>";
         echo"</div>";

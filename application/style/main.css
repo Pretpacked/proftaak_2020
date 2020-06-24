@@ -86,7 +86,7 @@ a:link, a:visited, a:hover, a:active {
 #planningsList-container{
     position: absolute;
     overflow: auto;
-    left: 24%;
+    left: 30%;
     bottom: 11%;
     top: 94px;
     right: 3%;

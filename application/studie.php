@@ -41,7 +41,9 @@ include_once("scripts/login_register.php");
 
     <div class="text-center studieText"> 
         Mijn studie  
-    </div> 
+    </div>
+
+    
 
     <p class="text-center studieText">
     </p>
