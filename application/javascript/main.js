@@ -82,10 +82,10 @@ function showProducts(){
           //   productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
           if(filters[t] == items[x]["vakken"] && filterIds.indexOf(items[x]["id"]) == -1){
             filterIds.push(items[x]["id"]);
-            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"];"</div></a>";          }
+            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";          }
         }
       }else{
-        productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";
+        productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";
       }
   }
   filterIds = [];

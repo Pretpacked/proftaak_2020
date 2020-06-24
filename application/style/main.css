@@ -199,17 +199,11 @@ hr{
     opacity: 1;
     cursor: pointer;
 }
-.merken-productnaam{
+.vakken-productnaam{
     display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: black;
-    color: white;
-    padding: 2%;
-    left: 0;
+
 }
-.items:hover > .merken-productnaam, .merken-productnaam:hover{
+.items:hover > .vakken-productnaam, .vakken-productnaam:hover{
     display: block;
 }
 #filters-container{
