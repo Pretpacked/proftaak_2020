@@ -193,7 +193,8 @@ hr{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50%;
+    height: 54%;
+    margin-top: 2%;
 }
 .items:hover{
     opacity: 1;
