@@ -2,7 +2,7 @@
 include_once("scripts/login_register.php");
 
 if(isset($_GET["clear"])){
-    unset($_SESSION["orderList"]);
+    unset($_SESSION["planList"]);
 }
 ?>
 <!DOCTYPE html>
@@ -77,19 +77,19 @@ if(isset($_GET["clear"])){
 
         <input class="form-control mr-sm-2 search" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Vakken" aria-label="Search">
 
-        <li><a><p id="Nederlands" onclick="filterUpdate(this.id, false)" class="text-center product">Nederlands</p></a></li>
-        <li><a><p id="Nederlands.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Nederlands x</p></a></li>
-        <li><a><p id="Engels" onclick="filterUpdate(this.id, false)" class="text-center product">Engels</p></a></li>
-        <li><a><p id="Engels.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Engels x</p></a></li>
-        <li><a><p id="Rekenen" onclick="filterUpdate(this.id, false)" class="text-center product">Rekenen</p></a></li>
-        <li><a><p id="Rekenen.hidden" onclick="filterUpdate(this.id, true)"class="text-center product product-hidden hide">Rekenen x</p></a></li>
+        <li><a><p id="Nederlands" onclick="filterUpdate(this.id, false)" class="text-center planItem">Nederlands</p></a></li>
+        <li><a><p id="Nederlands.hidden" onclick="filterUpdate(this.id, true)"class="text-center planItem planItem-hidden hide">Nederlands x</p></a></li>
+        <li><a><p id="Engels" onclick="filterUpdate(this.id, false)" class="text-center planItem">Engels</p></a></li>
+        <li><a><p id="Engels.hidden" onclick="filterUpdate(this.id, true)"class="text-center planItem planItem-hidden hide">Engels x</p></a></li>
+        <li><a><p id="Rekenen" onclick="filterUpdate(this.id, false)" class="text-center planItem">Rekenen</p></a></li>
+        <li><a><p id="Rekenen.hidden" onclick="filterUpdate(this.id, true)"class="text-center planItem planItem-hidden hide">Rekenen x</p></a></li>
       
     </ul> 
 
 </div>
 
-    <div id="productsList-container">
-        <div class="row" id="productsList"></div>
+    <div id="planningsList-container">
+        <div class="row" id="planningsList"></div>
     </div>
 
     <!-- JavaScript -->

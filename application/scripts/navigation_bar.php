@@ -15,7 +15,7 @@
                 <a class="nav-link" href="contact.php">Contact</a>
             </li> -->
             <?php
-                if(isset($_SESSION["orderList"])){
+                if(isset($_SESSION["planList"])){
                     echo ' <li class="nav-item"><a class="nav-link" href="rooster.php">Rooster</a></li>';
                 }
             ?>

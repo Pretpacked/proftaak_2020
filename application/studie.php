@@ -39,11 +39,11 @@ include_once("scripts/login_register.php");
     <!-- navBar -->
     <?php include_once("scripts/navigation_bar.php"); ?>    
 
-    <div class="text-center aboutText"> 
+    <div class="text-center studieText"> 
         Mijn studie  
     </div> 
 
-    <p class="text-center aboutText">
+    <p class="text-center studieText">
     </p>
 
     <!-- JavaScript -->

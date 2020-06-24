@@ -1,10 +1,10 @@
 <?php 
 include_once("scripts/login_register.php");
 
-if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
+if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     echo "geen items om te bestellen.";
     echo "<a href='shop.php'>terug!</a>";
-    unset($_SESSION["orderList"]);
+    unset($_SESSION["planList"]);
     exit();
 }
 ?>
@@ -55,39 +55,39 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
 
     $conn = new mysqli($servername, $username, $password, $database);
 
-    if(isset($_SESSION["orderList"])){
-        $array_count = array_count_values($_SESSION["orderList"]);
+    if(isset($_SESSION["planList"])){
+        $array_count = array_count_values($_SESSION["planList"]);
     }
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     if(isset($_GET["id"])){
-        $key = array_search($_GET["id"], $_SESSION["orderList"]);
-        unset($_SESSION["orderList"][$key]);
-        $_SESSION["orderList"] = array_values($_SESSION["orderList"]);
-        $array_count = array_count_values($_SESSION["orderList"]);
-        if($_SESSION["orderList"] == null){
-            unset($_SESSION["orderList"]);
+        $key = array_search($_GET["id"], $_SESSION["planList"]);
+        unset($_SESSION["planList"][$key]);
+        $_SESSION["planList"] = array_values($_SESSION["planList"]);
+        $array_count = array_count_values($_SESSION["planList"]);
+        if($_SESSION["planList"] == null){
+            unset($_SESSION["planList"]);
             header("Location:plannen.php");
         }
     }
 
-    if(isset($_SESSION["orderList"]) or !empty($array_count)){
-        for($x = 0; $x <= count($_SESSION["orderList"]) -1; $x++){
-            if(!isset($orderParamater)){
-                $orderParamater = ' where id="'.$_SESSION["orderList"][$x]. '"';
+    if(isset($_SESSION["planList"]) or !empty($array_count)){
+        for($x = 0; $x <= count($_SESSION["planList"]) -1; $x++){
+            if(!isset($planParamater)){
+                $planParamater = ' where id="'.$_SESSION["planList"][$x]. '"';
             }else{
-                $orderParamater = $orderParamater . ' or id="'.$_SESSION["orderList"][$x].'"';
+                $planParamater = $planParamater . ' or id="'.$_SESSION["planList"][$x].'"';
             }
         }
 
-        $sql = "SELECT * FROM tijden". $orderParamater;
+        $sql = "SELECT * FROM tijden". $planParamater;
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $orderItems[] = $row;
+                $planItems[] = $row;
             }
         }
 
@@ -105,12 +105,12 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         echo '</thead>'; 
         $t = 0;
 
-        for($i = 0; $i <= count($orderItems) - 1;$i++){
+        for($i = 0; $i <= count($planItems) - 1;$i++){
             echo '<tr>';
-            echo '<td class="bestel-container"><img class="bestel-img"src='.$orderItems[$i]["productImg"].'></td>';
-            echo '<td>'.$orderItems[$i]["vakken"].'</td>';
-            echo '<td>'.$orderItems[$i]["tijdstip"].'</td>';
-            echo '<td onclick="bestelRemoveAdd('.$orderItems[$i]["id"].')">x</td>';
+            echo '<td class="planning-container"><img class="planning-img"src='.$planItems[$i]["productImg"].'></td>';
+            echo '<td>'.$planItems[$i]["vakken"].'</td>';
+            echo '<td>'.$planItems[$i]["tijdstip"].'</td>';
+            echo '<td onclick="planRemoveAdd('.$planItems[$i]["id"].')">x</td>';
             echo '</tr>';
         }
         

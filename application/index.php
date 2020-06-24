@@ -47,7 +47,7 @@ include_once("scripts/login_register.php");
             <ul class="navbar-nav mr-auto">
 
             <?php
-                if(isset($_SESSION["orderList"])){
+                if(isset($_SESSION["planList"])){
                     echo ' <li class="nav-item"><a class="nav-link" href="plannen.php">Bestel lijst</a></li>';
                 }
             ?>
