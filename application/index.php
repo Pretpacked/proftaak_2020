@@ -46,11 +46,6 @@ include_once("scripts/login_register.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
 
-            <?php
-                if(isset($_SESSION["planList"])){
-                    echo ' <li class="nav-item"><a class="nav-link" href="plannen.php">Bestel lijst</a></li>';
-                }
-            ?>
             </ul>
             <div class="form-inline my-2 my-lg-0">
             <?php 
