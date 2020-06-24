@@ -40,7 +40,7 @@ function myFunction() {
 
 function filterUpdate(id, statement){
 /*
-if statement is false then product filter isn't selected, so if true filter should be enabled for this filter option.
+if statement is false then plan filter isn't selected, so if true filter should be enabled for this filter option.
 id is the filter option name and id of the element.
 */
   idElement = document.getElementById(id);
@@ -63,38 +63,32 @@ id is the filter option name and id of the element.
     idElementPrevious.classList.remove("hide");
   }
 
-  showProducts();
+  showPlanning();
 }
 
-function showProducts(){
-  var productsList = document.getElementById("productsList");
+function showPlanning(){
+  var planningsList = document.getElementById("planningsList");
   
-  productsList.innerHTML = '';
+  planningsList.innerHTML = '';
 
   for(var x = 0; x <= items.length -1;x++) {
       if(filters.length != 0){
         for(var t = 0; t <= filters.length -1; t++){
-          // if(filters[t] == items[x]["sex"] && filterIds.indexOf(items[x]["id"]) == -1){
-          //   filterIds.push(items[x]["id"]);
-          //   productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]; "</div></a>";          }
-          // if(filters[t] == items[x]["kleding"] && filterIds.indexOf(items[x]["id"]) == -1){
-          //   filterIds.push(items[x]["id"]);
-          //   productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"]+" - "+items[x]["productnaam"]+" €"+items[x]["prijs"]+",00</div></a>";          }
           if(filters[t] == items[x]["vakken"] && filterIds.indexOf(items[x]["id"]) == -1){
             filterIds.push(items[x]["id"]);
-            productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";          }
+            planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";          }
         }
       }else{
-        productsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";
+        planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'><div class='vakken-productnaam'>"+items[x]["vakken"];"</div></a>";
       }
   }
   filterIds = [];
 }
 
-showProducts();
-function bestelRemoveAdd(id){
+showPlanning();
+function planRemoveAdd(id){
   var id_str = id.toString()
-  while(id_str.length <=7){
+  while(id_str.length <=8){
     id_str = "0" + id_str;
     }
   
