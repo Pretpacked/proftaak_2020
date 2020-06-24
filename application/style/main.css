@@ -5,7 +5,8 @@ body
     min-height:550px;
 	position:relative;
     overflow-y: hidden;
-    background-image: url("../images/plankenzwart.jpg");
+   /* background-image: url("../images/plankenzwart.jpg"); */
+    background-color: gray;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
