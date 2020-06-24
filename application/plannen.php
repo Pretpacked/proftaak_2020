@@ -38,6 +38,7 @@ if(isset($_GET["clear"])){
         </form>
     </div>
 
+
     <?php 
     //error handeling
     include_once("scripts/login_register.php"); 
@@ -69,6 +70,7 @@ if(isset($_GET["clear"])){
     
     $conn->close();
     ?>
+    <h3 id="planKeuze">Kies een vak en plan de tijd in wanneer jij je examen wilt doen.</h3>
 
 <div class="filtermenu">
     <ul id="myMenu"> 

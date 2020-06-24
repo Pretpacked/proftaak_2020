@@ -94,7 +94,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
         
         echo '<p class="agenda"> Agenda </p>';
         echo '<div class="container">';  
-        echo '<table class="table table-hover">'; 
+        echo '<table class="table ">'; 
         echo '<thead>'; 
         echo '<tr>'; 
         echo '<th></th>'; 

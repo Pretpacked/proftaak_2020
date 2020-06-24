@@ -68,8 +68,11 @@ id is the filter option name and id of the element.
 
 function showPlanning(){
   var planningsList = document.getElementById("planningsList");
+
+  
   
   planningsList.innerHTML = '';
+
 
   for(var x = 0; x <= items.length -1;x++) {
       if(filters.length != 0){
@@ -78,8 +81,9 @@ function showPlanning(){
             filterIds.push(items[x]["id"]);
             planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'></a>";          }
         }
-      }else{
-        planningsList.innerHTML += "<a href='items.php?id="+items[x]["id"]+"' class='col-sm-4 items' style='background-image: url("+items[x]["productImg"]+")'></a>";
+      }
+      else{
+        
       }
   }
   filterIds = [];
