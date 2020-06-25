@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 jun 2020 om 12:23
+-- Gegenereerd op: 25 jun 2020 om 11:47
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.8
 
@@ -32,23 +32,11 @@ CREATE TABLE `rooster` (
   `id` int(8) UNSIGNED ZEROFILL NOT NULL,
   `voornaam` text NOT NULL,
   `achternaam` text NOT NULL,
+  `tijden` varchar(255) NOT NULL,
+  `vak` varchar(255) NOT NULL,
   `email` text NOT NULL,
-  `items` text NOT NULL,
   `tijd` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `rooster`
---
-
-INSERT INTO `rooster` (`id`, `voornaam`, `achternaam`, `email`, `items`, `tijd`) VALUES
-(00000051, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000052, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000053, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000054, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000055, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001', ''),
-(00000056, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', '00000004;00000001;00000001', ''),
-(00000057, 'root', 'root', 'root@root.nl', '00000001', '');
 
 -- --------------------------------------------------------
 
@@ -91,22 +79,24 @@ CREATE TABLE `userinformation` (
   `lastname` text NOT NULL,
   `email` text NOT NULL,
   `username` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `opleiding` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `userinformation`
 --
 
-INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username`, `password`) VALUES
-(00000001, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', 'test', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09'),
-(00000002, 'test', 'test', 'test1@gmail.com', 'test1', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09'),
-(00000003, 'sadfasdf', 'sdafdsaf', 'fsadf@sdfsadf.com', 'sdafas', 'NHZGQkpCL2dZNDErTXNZRkszazVpZz09'),
-(00000005, 'root', 'root', 'root@root.nl', 'root', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09'),
-(00000006, 'Rianne', 'Ter Linde', 'rianne@terlinde.eu', 'Rianne', 'L3E0a2J4bHR6SVZyR1VrSHdhQkczQT09'),
-(00000007, 'ricardo', 'ter', 'ricardo@terlinde.eu', 'ricardo', 'R0FzOUllbkdJN05NZVM2VlBlR2xOUT09'),
-(00000008, 'noah', 'alba', 'noah.alba@hotmail.com', 'noah', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09'),
-(00000009, 'admin', 'admin', 'admin@admin.nl', 'admin', 'OVUwd001SGRwZVZTOTVURjAweW0rdz09');
+INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `opleiding`) VALUES
+(00000001, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', 'test', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09', ''),
+(00000002, 'test', 'test', 'test1@gmail.com', 'test1', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09', ''),
+(00000003, 'sadfasdf', 'sdafdsaf', 'fsadf@sdfsadf.com', 'sdafas', 'NHZGQkpCL2dZNDErTXNZRkszazVpZz09', ''),
+(00000005, 'root', 'root', 'root@root.nl', 'root', 'TGZBcUdCd0tzT09tbzhLb1V5Q2FoQT09', ''),
+(00000006, 'Rianne', 'Ter Linde', 'rianne@terlinde.eu', 'Rianne', 'L3E0a2J4bHR6SVZyR1VrSHdhQkczQT09', ''),
+(00000007, 'ricardo', 'ter', 'ricardo@terlinde.eu', 'ricardo', 'R0FzOUllbkdJN05NZVM2VlBlR2xOUT09', ''),
+(00000009, 'admin', 'admin', 'admin@admin.nl', 'admin', 'OVUwd001SGRwZVZTOTVURjAweW0rdz09', ''),
+(00000010, 'noah', 'noah', 'noah.noah@noah.noah', 'noah', 'NVVGN05TancwSFZPcXpsTjYvUzZGQT09', ''),
+(00000011, 'Lars', 'van Breugel', 'larsvanbreugel@hotmail.com', 'lars', 'cFNmL0lod3NKQkpBSFlSQ0g3d1padz09', '');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -151,7 +141,7 @@ ALTER TABLE `tijden`
 -- AUTO_INCREMENT voor een tabel `userinformation`
 --
 ALTER TABLE `userinformation`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
