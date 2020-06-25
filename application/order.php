@@ -1,10 +1,10 @@
 <?php 
-include_once("scripts/logon_register.php");
+include_once("scripts/login_register.php");
 
-if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
+if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     echo "geen items om te bestellen.";
-    echo "<a href='shop.php'>terug!</a>";
-    unset($_SESSION["orderList"]);
+    echo "<a href='plannen.php'>terug!</a>";
+    unset($_SESSION["planList"]);
     exit();
 }
 ?>
@@ -43,7 +43,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
 
     <?php 
     //error handeling
-    include_once("scripts/logon_register.php"); 
+    include_once("scripts/login_register.php"); 
     //navBar
     include_once("scripts/navigation_bar.php"); 
 
@@ -84,7 +84,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         }
         echo'</div>';
         echo'<div class="form-group">';
-        echo'<label for="Straat">Straat:</label>';
+       /* echo'<label for="Straat">Straat:</label>';
         echo'<input type="text" required name="Straat" class="form-control" id="Straat">';
         echo'</div>';
         echo'<div class="form-group">';
@@ -106,7 +106,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
         echo'<div class="form-group">';
         echo'<label for="Telefoonnummer">Telefoonnummer:</label>';
         echo'<input type="text" required name="Telefoonnummer" class="form-control" id="Telefoonnummer">';
-        echo'</div>';
+        echo'</div>';*/
         echo'<div class="form-group">';
         echo'<label for="E-mailadres">E-mailadres:</label>';
         if(isset($_SESSION["email"])){
@@ -122,28 +122,28 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
     }
     if(isset($_SESSION["password"]) && isset($_SESSION["username"]) && isset($_GET["order_submit"])){
 
-        $adres = [$_POST["Straat"], $_POST["HuisnummerEnToevoging"], $_POST["Postcode"], $_POST["Woonplaats"], $_POST["Land"]];
+        //$adres = [$_POST["Straat"], $_POST["HuisnummerEnToevoging"], $_POST["Postcode"], $_POST["Woonplaats"], $_POST["Land"]];
 
         $sqlFirstname = $_SESSION["firstname"];
         $sqlLastname = $_SESSION["lastname"];
-        $sqladres = implode(";",$adres);
-        $sqlTelefoonnummer = $_POST["Telefoonnummer"];
+        //$sqladres = implode(";",$adres);
+        //$sqlTelefoonnummer = $_POST["Telefoonnummer"];
         $sqlEmail = $_SESSION["email"];
-        $sqlOrderlist = implode(";",$_SESSION["orderList"]);
-        $sqlTotal = $_SESSION["total"];
+        $sqlplanList = implode(";",$_SESSION["planList"]);
+        //$sqlTotal = $_SESSION["total"];
         $sqlTime = date('Y/m/d h:i:s');
 
-        $sql = "INSERT INTO bestellingen (voornaam, achternaam, adres, nummer, email, items, prijs, tijd) VALUES ('$sqlFirstname', '$sqlLastname', '$sqladres', '$sqlTelefoonnummer', '$sqlEmail', '$sqlOrderlist', '$sqlTotal', '$sqlTime')";
+        $sql = "INSERT INTO bestellingen (voornaam, achternaam,  email, items, tijd) VALUES ('$sqlFirstname', '$sqlLastname', '$sqlEmail', '$sqlplanList', '$sqlTime')";
         $conn->query($sql);
 
 
-        $array_count = array_count_values($_SESSION["orderList"]);
+        $array_count = array_count_values($_SESSION["planList"]);
 
-        for($x = 0; $x <= count($_SESSION["orderList"]) -1; $x++){
+        for($x = 0; $x <= count($_SESSION["planList"]) -1; $x++){
             if(!isset($orderParamater)){
-                $orderParamater = ' where id="'.$_SESSION["orderList"][$x]. '"';
+                $orderParamater = ' where id="'.$_SESSION["planList"][$x]. '"';
             }else{
-                $orderParamater = $orderParamater . ' or id="'.$_SESSION["orderList"][$x].'"';
+                $orderParamater = $orderParamater . ' or id="'.$_SESSION["planList"][$x].'"';
             }
         }
 
@@ -156,7 +156,7 @@ if(!isset($_SESSION["orderList"]) or $_SESSION["orderList"] == null){
             }
         }
 
-        $sql = "SELECT id FROM bestellingen where voornaam='$sqlFirstname' and achternaam='$sqlLastname' and adres='$sqladres' and nummer='$sqlTelefoonnummer' and email='$sqlEmail' and items='$sqlOrderlist'and prijs='$sqlTotal' and tijd='$sqlTime'";
+        $sql = "SELECT id FROM bestellingen where voornaam='$sqlFirstname' and achternaam='$sqlLastname' and adres='$sqladres' and nummer='$sqlTelefoonnummer' and email='$sqlEmail' and items='$sqlplanList'and prijs='$sqlTotal' and tijd='$sqlTime'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
