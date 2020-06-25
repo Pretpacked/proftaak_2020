@@ -39,6 +39,27 @@ include_once("scripts/login_register.php");
     <!-- navBar -->
     <?php include_once("scripts/navigation_bar.php"); ?>    
 
+    <?php 
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $database = "proftaak";
+
+    $conn = new mysqli($servername, $username, $password, $database);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    echo"<div class='container'";
+    echo"<div class='row'>";
+    if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){echo"<div class='col-sm-12 text-center'><h2 id='order-h1-text'>U moet eerst zijn ingelogged voor dat U verder kunt gaan!</h2></div>"; 
+    echo"<div class='col-sm-12 text-center'>";
+        echo '<button class="btn btn-outline-success my-2 my-sm-0 login" onclick="login()">Login</button>'; 
+        echo '<button class="btn btn-outline-success my-2 my-sm-0" onclick="register()">Register</button>';
+    echo"";}
+    else{ ?>
+
     <div class="text-center studieText"> 
         Mijn studie  
     </div>
@@ -47,6 +68,9 @@ include_once("scripts/login_register.php");
 
     <p class="text-center studieText">
     </p>
+
+
+    <?php } ?>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

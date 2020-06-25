@@ -59,6 +59,15 @@ if(isset($_GET["clear"])){
         die("Connection failed: " . $conn->connect_error);
     }
 
+    echo"<div class='container'";
+    echo"<div class='row'>";
+    if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){echo"<div class='col-sm-12 text-center'><h2 id='order-h1-text'>U moet eerst zijn ingelogged voor dat U verder kunt gaan!</h2></div>"; 
+    echo"<div class='col-sm-12 text-center'>";
+        echo '<button class="btn btn-outline-success my-2 my-sm-0 login" onclick="login()">Login</button>'; 
+        echo '<button class="btn btn-outline-success my-2 my-sm-0" onclick="register()">Register</button>';
+    echo"";}
+    else{
+
     $sql = "SELECT * FROM tijden";
     $result = $conn->query($sql);
 
@@ -94,6 +103,8 @@ if(isset($_GET["clear"])){
     <div id="planningsList-container">
         <div class="row" id="planningsList"></div>
     </div>
+
+<?php } ?> 
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

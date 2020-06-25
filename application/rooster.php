@@ -55,6 +55,17 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
 
     $conn = new mysqli($servername, $username, $password, $database);
 
+    echo"<div class='container'";
+    echo"<div class='row'>";
+    if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){echo"<div class='col-sm-12 text-center'><h2 id='order-h1-text'>U moet eerst zijn ingelogged voor dat U verder kunt gaan!</h2></div>"; 
+    echo"<div class='col-sm-12 text-center'>";
+        echo '<button class="btn btn-outline-success my-2 my-sm-0 login" onclick="login()">Login</button>'; 
+        echo '<button class="btn btn-outline-success my-2 my-sm-0" onclick="register()">Register</button>';
+    echo"";}
+    else
+    {
+
+
     if(isset($_SESSION["planList"])){
         $array_count = array_count_values($_SESSION["planList"]);
     }
@@ -120,7 +131,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     }else{
 
     }
-
+}
     ?>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
