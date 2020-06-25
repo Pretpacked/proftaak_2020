@@ -4,6 +4,7 @@ include_once("scripts/login_register.php");
 if(isset($_GET["clear"])){
     unset($_SESSION["planList"]);
 }
+
 ?>
 <!DOCTYPE html>
 <html>
