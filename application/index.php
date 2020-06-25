@@ -36,7 +36,6 @@ include_once("scripts/login_register.php");
     <!-- error handeling -->
 <?php include_once("scripts/login_register.php"); ?>
     <!-- navBar -->
-<?php// include_once("scripts/navigation_bar.php"); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.php">LRRN</a>
