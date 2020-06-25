@@ -113,6 +113,9 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
             echo '<td onclick="planRemoveAdd('.$planItems[$i]["id"].')">x</td>';
             echo '</tr>';
         }
+
+        echo '<div class="col-sm-12"><a href="opslaan.php" id="singlebutton" class="btn btn-primary float-right">Bestel</a><br><br><a href="plannen.php?clear=true" id="singlebutton" class="btn btn-primary float-right">Bestel lijst leegmaken</a></div>';
+        
         
     }else{
 
