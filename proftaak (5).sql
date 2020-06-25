@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 25 jun 2020 om 10:47
+-- Gegenereerd op: 25 jun 2020 om 11:28
 -- Serverversie: 5.7.19
 -- PHP-versie: 7.1.20
 
@@ -43,7 +43,9 @@ CREATE TABLE `rooster` (
 
 INSERT INTO `rooster` (`id`, `voornaam`, `achternaam`, `tijden`, `email`, `tijd`) VALUES
 (00000058, 'ricardo', 'ter linde', '15:00 tot 18:00', 'ricardo@terlinde.eu', '8:00:00'),
-(00000059, 'root', 'root', '00000014;00000014;00000021', 'root@root.nl', '2020/06/25 10:31:41');
+(00000059, 'root', 'root', '00000014;00000014;00000021', 'root@root.nl', '2020/06/25 10:31:41'),
+(00000060, 'root', 'root', '00000014;00000014;00000021', 'root@root.nl', '2020/06/25 10:49:58'),
+(00000061, 'root', 'root', '00000014;00000014;00000021', 'root@root.nl', '2020/06/25 10:52:18');
 
 -- --------------------------------------------------------
 
@@ -87,14 +89,14 @@ CREATE TABLE `userinformation` (
   `email` text NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
-  `opleiding` varchar(255) NOT NULL
+  `studie` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `userinformation`
 --
 
-INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `opleiding`) VALUES
+INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `studie`) VALUES
 (00000001, 'Ricardo', 'bettonvil', 'ricardobettonvil@gmail.com', 'test', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09', ''),
 (00000002, 'test', 'test', 'test1@gmail.com', 'test1', 'bnZmMmRLVGpKLzBITEJRZ3BpNi92Zz09', ''),
 (00000003, 'sadfasdf', 'sdafdsaf', 'fsadf@sdfsadf.com', 'sdafas', 'NHZGQkpCL2dZNDErTXNZRkszazVpZz09', ''),
@@ -103,7 +105,8 @@ INSERT INTO `userinformation` (`id`, `firstname`, `lastname`, `email`, `username
 (00000007, 'ricardo', 'ter', 'ricardo@terlinde.eu', 'ricardo', 'R0FzOUllbkdJN05NZVM2VlBlR2xOUT09', ''),
 (00000009, 'admin', 'admin', 'admin@admin.nl', 'admin', 'OVUwd001SGRwZVZTOTVURjAweW0rdz09', ''),
 (00000010, 'noah', 'noah', 'noah.noah@noah.noah', 'noah', 'NVVGN05TancwSFZPcXpsTjYvUzZGQT09', ''),
-(00000011, 'Lars', 'van Breugel', 'larsvanbreugel@hotmail.com', 'lars', 'cFNmL0lod3NKQkpBSFlSQ0g3d1padz09', '');
+(00000011, 'Lars', 'van Breugel', 'larsvanbreugel@hotmail.com', 'lars', 'cFNmL0lod3NKQkpBSFlSQ0g3d1padz09', ''),
+(00000012, 'pen', 'pen', 'pen@pen.nl', 'pen', 'c0dxdGJTbjNsWXRJVTNObCtWMi81UT09', 'pen');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -136,7 +139,7 @@ ALTER TABLE `userinformation`
 -- AUTO_INCREMENT voor een tabel `rooster`
 --
 ALTER TABLE `rooster`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT voor een tabel `tijden`
@@ -148,7 +151,7 @@ ALTER TABLE `tijden`
 -- AUTO_INCREMENT voor een tabel `userinformation`
 --
 ALTER TABLE `userinformation`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

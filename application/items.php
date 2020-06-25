@@ -34,6 +34,7 @@ if(isset($_GET["opslaan"]) and isset($_GET["opslaan"])){
     <form method="post" action="<?php echo basename(__FILE__, '.php') ?>">
         <input type="text" placeholder="username" name="register-username" required><br>
         <input type="password" placeholder="password" name="register-password" required><br><br>
+        <input type="text" placeholder="studie" name="register-studie" required><br>
         <input type="text" placeholder="firstname" name="register-firstname" required><br>
         <input type="text" placeholder="lastname" name="register-lastname" required><br>
         <input type="text" placeholder="email" name="register-email" required><br><br>
