@@ -45,10 +45,11 @@ if(isset($_SESSION["password"]) && isset($_SESSION["username"]) && $_SESSION["us
 }
 
 //Check if a user wants to send an register form.
-if(isset($_POST["register-firstname"]) && isset($_POST["register-lastname"]) && isset($_POST["register-email"]) && isset($_POST["register-username"]) && isset($_POST["register-password"])){
+if(isset($_POST["register-firstname"]) && isset($_POST["register-lastname"]) && isset($_POST["register-email"]) && isset($_POST["register-studie"]) && isset($_POST["register-username"]) && isset($_POST["register-password"])){
     $GETfirstname = $_POST["register-firstname"];
     $GETlastname = $_POST["register-lastname"];
     $GETemail = $_POST["register-email"];
+    $GETstudie = $_POST["register-studie"];
 
     $GETusername = $_POST["register-username"];
     $GETpassword = $_POST["register-password"];
@@ -62,6 +63,10 @@ if(isset($_POST["register-firstname"]) && isset($_POST["register-lastname"]) && 
         $usernameError = "<div class='register-error'>Invalid lastname format.</div>";
         $check = 0;
     }
+    if(!preg_match("/^[a-zA-Z ]*$/",$GETstudie)){
+        $usernameError = "<div class='register-error'>Invalid lastname format.</div>";
+        $check = 0;
+    }
     if(!preg_match("/^[a-zA-Z1-9 ]*$/",$GETusername)){
         $usernameError = "<div class='register-error'>Invalid username format.</div>";
         $check = 0;
@@ -71,7 +76,7 @@ if(isset($_POST["register-firstname"]) && isset($_POST["register-lastname"]) && 
         $check = 0;
     }
     if(!isset($check)){
-        insertAuth($GETfirstname, $GETlastname, $GETemail, $GETusername, $GETpassword);
+        insertAuth($GETfirstname, $GETlastname, $GETemail, $GETstudie, $GETusername, $GETpassword);
     }
 }
 
@@ -88,6 +93,7 @@ function checkAuth($GETusername, $GETpassword){
         $_SESSION["id"] = $userInformation["id"];
         $_SESSION["firstname"] = $userInformation["firstname"];
         $_SESSION["lastname"] = $userInformation["lastname"];
+        $_SESSION["studie"] = $userInformation["studie"];
         $_SESSION["email"] = $userInformation["email"];
         $_SESSION["username"] = $userInformation["username"];
         $_SESSION["password"] = $userInformation["password"];
@@ -98,7 +104,7 @@ function checkAuth($GETusername, $GETpassword){
 }
 
 //Inserting user given authecation data.
-function insertAuth($GETfirstname, $GETlastname, $GETemail, $GETusername, $GETpassword){
+function insertAuth($GETfirstname, $GETlastname, $GETemail, $GETusername, $GETstudie, $GETpassword){
     global $conn, $usernameError, $emailError;
 
     //Get mail and username for a check.
@@ -109,7 +115,7 @@ function insertAuth($GETfirstname, $GETlastname, $GETemail, $GETusername, $GETpa
     if($mail->num_rows == 0 && $username->num_rows == 0){
         echo "creating account!";
         $encryptedPassword = my_simple_crypt( $GETpassword, 'e' ); 
-        $result = $conn->query("INSERT INTO userinformation (firstname, lastname, email, username, password) values ('$GETfirstname', '$GETlastname', '$GETemail', '$GETusername', '$encryptedPassword')");
+        $result = $conn->query("INSERT INTO userinformation (firstname, lastname, email, username, studie, password) values ('$GETfirstname', '$GETlastname', '$GETemail', '$GETusername', '$GETstudie', '$encryptedPassword')");
     }
 
     //Check if mail and or username is already used and display an error.
@@ -129,6 +135,7 @@ if(isset($_GET["logout"]) && $_GET["logout"] == true){
     unset($_SESSION["email"]);
     unset($_SESSION["username"]);
     unset($_SESSION["password"]);
+    unset($_SESSION["studie"]);
 }
 
 //Function for encryption and decryption.
