@@ -51,7 +51,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     $servername = "localhost";
     $username = "root";
     $password = "root"; 
-    $database = "proftaak19";
+    $database = "proftaak";
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -133,35 +133,35 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
         //$sqlTotal = $_SESSION["total"];
         $sqlTime = date('Y/m/d h:i:s');
 
-        $sql = "INSERT INTO bestellingen (voornaam, achternaam,  email, items, tijd) VALUES ('$sqlFirstname', '$sqlLastname', '$sqlEmail', '$sqlplanList', '$sqlTime')";
+        $sql = "INSERT INTO rooster (voornaam, achternaam,  email, tijden, tijd) VALUES ('$sqlFirstname', '$sqlLastname', '$sqlEmail', '$sqlplanList', '$sqlTime')";
         $conn->query($sql);
 
 
         $array_count = array_count_values($_SESSION["planList"]);
 
         for($x = 0; $x <= count($_SESSION["planList"]) -1; $x++){
-            if(!isset($orderParamater)){
-                $orderParamater = ' where id="'.$_SESSION["planList"][$x]. '"';
+            if(!isset($planParamater)){
+                $planParamater = ' where id="'.$_SESSION["planList"][$x]. '"';
             }else{
-                $orderParamater = $orderParamater . ' or id="'.$_SESSION["planList"][$x].'"';
+                $planParamater = $planParamater . ' or id="'.$_SESSION["planList"][$x].'"';
             }
         }
 
-        $sql = "SELECT * FROM items". $orderParamater;
+        $sql = "SELECT * FROM tijden". $planParamater;
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $orderItems[] = $row;
+                $planItems[] = $row;
             }
         }
 
-        $sql = "SELECT id FROM bestellingen where voornaam='$sqlFirstname' and achternaam='$sqlLastname' and adres='$sqladres' and nummer='$sqlTelefoonnummer' and email='$sqlEmail' and items='$sqlplanList'and prijs='$sqlTotal' and tijd='$sqlTime'";
+        $sql = "SELECT id FROM rooster where voornaam='$sqlFirstname' and achternaam='$sqlLastname' and email='$sqlEmail' and tijden='$sqlplanList' and  tijd='$sqlTime'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo "<div class='container'><div class='row'><div class='col-sm-12 order-confirm text-center'>R.L.R Casuals NL - Informatie over bestelling ".$row['id']." [".$sqlTime."]<br>";
-                echo "Klantnummer: ".$_SESSION["id"]."<br>Ordernummer: ".$row['id']." <br><br>Beste ".$sqlFirstname."<br><br>Bedankt voor je bestelling bij R.L.R Casuals.</div></div></div>";
+                echo "<div class='container'><div class='row'><div class='col-sm-12 order-confirm text-center'>RLNNR - Informatie over examen ".$row['id']." [".$sqlTime."]<br>";
+                echo "Klantnummer: ".$_SESSION["id"]."<br>Ordernummer: ".$row['id']." <br><br>Beste ".$sqlFirstname."<br><br>Bedankt voor het inplannen.</div></div></div>";
             }
         }       
     }
