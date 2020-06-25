@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Gegenereerd op: 25 jun 2020 om 11:47
--- Serverversie: 10.4.6-MariaDB
--- PHP-versie: 7.3.8
+-- Host: localhost
+-- Gegenereerd op: 25 jun 2020 om 10:47
+-- Serverversie: 5.7.19
+-- PHP-versie: 7.1.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,10 +33,17 @@ CREATE TABLE `rooster` (
   `voornaam` text NOT NULL,
   `achternaam` text NOT NULL,
   `tijden` varchar(255) NOT NULL,
-  `vak` varchar(255) NOT NULL,
   `email` text NOT NULL,
   `tijd` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `rooster`
+--
+
+INSERT INTO `rooster` (`id`, `voornaam`, `achternaam`, `tijden`, `email`, `tijd`) VALUES
+(00000058, 'ricardo', 'ter linde', '15:00 tot 18:00', 'ricardo@terlinde.eu', '8:00:00'),
+(00000059, 'root', 'root', '00000014;00000014;00000021', 'root@root.nl', '2020/06/25 10:31:41');
 
 -- --------------------------------------------------------
 
@@ -129,7 +136,7 @@ ALTER TABLE `userinformation`
 -- AUTO_INCREMENT voor een tabel `rooster`
 --
 ALTER TABLE `rooster`
-  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT voor een tabel `tijden`
