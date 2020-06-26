@@ -91,9 +91,9 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
             echo'<input type="text" class="form-control" name="E-mailadres" required id="E-mailadres">';
         }
         echo'</div>';
-        echo'<input type="submit">';
+        echo'<button type="submit" class="btn btn-primary"> Verzenden </button>';
         echo'</form>';
-        echo'</div>';
+        echo'</div>';        
         echo"</div>";
     }
     if(isset($_SESSION["password"]) && isset($_SESSION["username"]) && isset($_GET["order_submit"])){
