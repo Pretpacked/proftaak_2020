@@ -6,7 +6,7 @@ body
 	position:relative;
     overflow-y: hidden;
    /* background-image: url("../images/plankenzwart.jpg"); */
-    background-color: gray;
+    background-color:  #b3b3b3;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
