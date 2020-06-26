@@ -66,7 +66,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     if(isset($_SESSION["password"]) && isset($_SESSION["username"]) && !isset($_GET["order_submit"])){
         echo"<div class='col-sm-12>'";
         echo'<div class="container">';
-        echo'<form action="order.php?order_submit=true" method="post">';
+        echo'<form action="planin.php?order_submit=true" method="post">';
         echo'<div class="form-group">';
         echo'<label for="Voornaam">Voornaam:</label>';
         if(isset($_SESSION["firstname"])){
