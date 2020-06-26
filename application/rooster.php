@@ -1,6 +1,7 @@
 <?php 
 include_once("scripts/login_register.php");
 
+//geen planningen opgeslagen je word teruggestuurd
 if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     echo "geen items om te bestellen.";
     echo "<a href='plannen.php'>terug!</a>";
@@ -66,7 +67,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     else
     {
 
-
+        // connection for saved planlist
     if(isset($_SESSION["planList"])){
         $array_count = array_count_values($_SESSION["planList"]);
     }
@@ -103,7 +104,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
             }
         }
 
-        
+        //table for agenda
         echo '<p class="agenda"> Agenda </p>';
         echo '<div class="container">';  
         echo '<table class="table ">'; 
@@ -126,7 +127,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
             echo '</tr>';
         }
 
-        echo '<div class="col-sm-12"><a href="order.php" id="singlebutton" class="btn btn-primary float-right">plan in</a><br><br>';
+        echo '<div class="col-sm-12"><a href="planin.php" id="singlebutton" class="btn btn-primary float-right">plan in</a><br><br>';
         
         
     }else{
