@@ -136,6 +136,7 @@ if(isset($_GET["logout"]) && $_GET["logout"] == true){
     unset($_SESSION["username"]);
     unset($_SESSION["password"]);
     unset($_SESSION["studie"]);
+    unset($_SESSION["planList"]);
 }
 
 //Function for encryption and decryption.
