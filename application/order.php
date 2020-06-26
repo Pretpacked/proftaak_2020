@@ -132,11 +132,13 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<div class='container'><div class='row'><div class='col-sm-12 order-confirm text-center'>";
-                echo " <br><br>Beste ".$sqlFirstname."<br><br>Bedankt voor het inplannen van je examen, tot dan!.</div></div></div>";
+                echo " <br><br>Beste ".$sqlFirstname." ". $sqlLastname .", <br><br>Bedankt voor het inplannen van je examen. Zorg ervoor dat je het goed in je agenda zet, tot dan!.</div></div></div>";
             }
         }       
     }
     echo "</div></div>";
+
+
 
     ?>
     <!-- JavaScript -->
