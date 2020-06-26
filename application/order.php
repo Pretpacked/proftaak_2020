@@ -84,30 +84,6 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
         }
         echo'</div>';
         echo'<div class="form-group">';
-       /* echo'<label for="Straat">Straat:</label>';
-        echo'<input type="text" required name="Straat" class="form-control" id="Straat">';
-        echo'</div>';
-        echo'<div class="form-group">';
-        echo'<label for="HuisnummerEnToevoging">Huisnummer en toevoeging:</label>';
-        echo'<input type="text" required name="HuisnummerEnToevoging" class="form-control" id="HuisnummerEnToevoging">';
-        echo'</div>';
-        echo'<div class="form-group">';
-        echo'<label for="Postcode">Postcode:</label>';
-        echo'<input type="text" required name="Postcode" class="form-control" id="Postcode">';
-        echo'</div>';
-        echo'<div class="form-group">';
-        echo'<label for="Woonplaats">Woonplaats:</label>';
-        echo'<input type="text" required name="Woonplaats" class="form-control" id="Woonplaats">';
-        echo'</div>';
-        echo'<div class="form-group">';
-        echo'<label for="Land">Land:</label>';
-        echo'<input type="text" required name="Land" class="form-control" id="Land">';
-        echo'</div>';
-        echo'<div class="form-group">';
-        echo'<label for="Telefoonnummer">Telefoonnummer:</label>';
-        echo'<input type="text" required name="Telefoonnummer" class="form-control" id="Telefoonnummer">';
-        echo'</div>';*/
-        echo'<div class="form-group">';
         echo'<label for="E-mailadres">E-mailadres:</label>';
         if(isset($_SESSION["email"])){
             echo'<input disabled type="text" value="'.$_SESSION["email"].'" name="E-mailadres" required class="form-control" id="E-mailadres">';
@@ -121,16 +97,11 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
         echo"</div>";
     }
     if(isset($_SESSION["password"]) && isset($_SESSION["username"]) && isset($_GET["order_submit"])){
-
-        //$adres = [$_POST["Straat"], $_POST["HuisnummerEnToevoging"], $_POST["Postcode"], $_POST["Woonplaats"], $_POST["Land"]];
-
+        
         $sqlFirstname = $_SESSION["firstname"];
         $sqlLastname = $_SESSION["lastname"];
-        //$sqladres = implode(";",$adres);
-        //$sqlTelefoonnummer = $_POST["Telefoonnummer"];
         $sqlEmail = $_SESSION["email"];
         $sqlplanList = implode(";",$_SESSION["planList"]);
-        //$sqlTotal = $_SESSION["total"];
         $sqlTime = date('Y/m/d h:i:s');
 
         $sql = "INSERT INTO rooster (voornaam, achternaam,  email, tijden, tijd) VALUES ('$sqlFirstname', '$sqlLastname', '$sqlEmail', '$sqlplanList', '$sqlTime')";

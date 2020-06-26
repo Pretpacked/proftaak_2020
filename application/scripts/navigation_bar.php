@@ -11,9 +11,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="studie.php">Mijn studie</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact</a>
-            </li> -->
+
             <?php
                 if(isset($_SESSION["planList"])){
                     echo ' <li class="nav-item"><a class="nav-link" href="rooster.php">Rooster</a></li>';
@@ -25,7 +23,6 @@
                 if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){ echo '<button class="btn btn-outline-success my-2 my-sm-0 login" onclick="login()">Login</button>'; }
                 if(!isset($_SESSION["password"]) && !isset($_SESSION["username"])){ echo '<button class="btn btn-outline-success my-2 my-sm-0" onclick="register()">Register</button>';}
 
-                /*if(isset($_SESSION["password"]) && isset($_SESSION["username"])){ echo '<a class="btn btn-outline-success my-2 my-sm-0" href="settings.php">settings</a>'; }*/
                 if(isset($_SESSION["password"]) && isset($_SESSION["username"])){ echo '<a class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=true">logout</a>'; }
             ?>
         </div>
