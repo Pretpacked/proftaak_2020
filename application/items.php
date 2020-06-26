@@ -79,7 +79,6 @@ if(isset($_GET["opslaan"]) and isset($_GET["opslaan"])){
             echo"planItem could not be found!";
         }
 
-    //    echo"<div id='item-image-background' style='background-image: url(".$result["productImg"].")'></div>";
 
         echo"<div class='container item-container'>";
         echo    "<div class='row'>";

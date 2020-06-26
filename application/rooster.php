@@ -3,7 +3,7 @@ include_once("scripts/login_register.php");
 
 if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
     echo "geen items om te bestellen.";
-    echo "<a href='shop.php'>terug!</a>";
+    echo "<a href='plannen.php'>terug!</a>";
     unset($_SESSION["planList"]);
     exit();
 }
