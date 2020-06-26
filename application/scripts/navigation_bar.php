@@ -9,7 +9,7 @@
                 <a class="nav-link" href="plannen.php">Plannen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="studie.php">Mijn studie</a>
+                <a class="nav-link" href="covid.php">Covid-19</a>
             </li>
 
             <?php
