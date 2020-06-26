@@ -126,7 +126,7 @@ if(!isset($_SESSION["planList"]) or $_SESSION["planList"] == null){
             echo '</tr>';
         }
 
-        echo '<div class="col-sm-12"><a href="order.php" id="singlebutton" class="btn btn-primary float-right">plan in</a><br><br>';
+        echo '<div class="col-sm-12"><a href="planin.php" id="singlebutton" class="btn btn-primary float-right">plan in</a><br><br>';
         
         
     }else{
