@@ -14,6 +14,7 @@ include_once("scripts/login_register.php");
 </head>
 <body>
 
+<!-- login functie -->
 <div id="background-login">
     <form method="post" action="<?php echo basename(__FILE__, '.php').".php" ?>">
         <input type="text" placeholder="username" name="login-username" required><br>
@@ -22,6 +23,7 @@ include_once("scripts/login_register.php");
     </form>
 </div>
 
+<!-- register functie -->
 <div id="background-register">
 <form method="post" action="<?php echo basename(__FILE__, '.php').".php" ?>">
         <input type="text" placeholder="username" name="register-username" required><br>
