@@ -66,7 +66,7 @@ include_once("scripts/login_register.php");
     </div>
 
     <h2 class="text-center covidText">
-    De examens gaan dit jaar wat anders dan verwacht, zo moet je verplicht de 1,5 meter handteren bij ons op school en moet je bij binnekomst je handen desinfecteren.
+    De examens gaan dit jaar wat anders dan verwacht, zo moet je verplicht de 1,5 meter hanteren bij ons op school en moet je bij binnenkomst je handen desinfecteren.
     Voor de examens die gemaakt moeten worden zijn speciale lokalen vrij gehouden, bij deze examens mogen maar maximaal 20 leerling deelnemen.
     </h2>
 
