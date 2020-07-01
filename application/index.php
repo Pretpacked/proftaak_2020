@@ -26,9 +26,9 @@ include_once("scripts/login_register.php");
 <!-- register functie -->
 <div id="background-register">
 <form method="post" action="<?php echo basename(__FILE__, '.php').".php" ?>">
-        <input type="text" placeholder="studie" name="register-username" required><br>
+<input type="text" placeholder="username" name="register-studie" required><br>
         <input type="password" placeholder="password" name="register-password" required><br><br>
-        <input type="text" placeholder="username" name="register-studie" required><br>
+        <input type="text" placeholder="studie" name="register-username" required><br>
         <input type="text" placeholder="firstname" name="register-firstname" required><br>
         <input type="text" placeholder="lastname" name="register-lastname" required><br>
         <input type="text" placeholder="email" name="register-email" required><br><br>
